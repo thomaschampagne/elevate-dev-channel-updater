@@ -1,0 +1,26 @@
+{
+  "name": "elevate-dev-channel-update",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "del": "^3.0.0",
+    "lodash": "^4.17.11",
+    "request": "^2.88.0",
+    "typescript": "^3.3.0",
+    "unzipper": "^0.9.11"
+  },
+  "devDependencies": {
+    "@types/del": "^3.0.1",
+    "@types/lodash": "^4.14.121",
+    "@types/request": "^2.48.1",
+    "@types/unzipper": "^0.9.1",
+    "ts-node": "^8.0.2"
+  },
+  "scripts": {
+    "start": "node ./node_modules/ts-node/dist/bin.js index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
