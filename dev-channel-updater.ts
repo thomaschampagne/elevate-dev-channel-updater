@@ -56,11 +56,20 @@ export class DevChannelUpdater {
 
     public getBitBucketLatestBuild(): Promise<BitBucketApi.Response> {
         return new Promise<BitBucketApi.Response>((resolve, reject) => {
-            request(DevChannelUpdater.LAST_CI_BUILDS_URL, (error: any, response: Response) => {
+
+            const headers = {
+                "Content-Type": "application/json"
+            };
+
+            request(DevChannelUpdater.LAST_CI_BUILDS_URL, {headers: headers}, (error: any, response: Response) => {
                 if (error) {
                     reject(error);
                 } else {
-                    resolve(JSON.parse(response.body));
+                    if (response.statusCode === 200) {
+                        resolve(JSON.parse(response.body));
+                    } else {
+                        reject(response);
+                    }
                 }
             });
         });

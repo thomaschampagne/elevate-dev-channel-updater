@@ -18,7 +18,9 @@
     "ts-node": "^8.0.2"
   },
   "scripts": {
-    "start": "node ./node_modules/ts-node/dist/bin.js index.ts",
+    "update:debug:unix": "node $NODE_DEBUG_OPTION ./node_modules/ts-node/dist/bin.js index.ts",
+    "update:debug:win": "node %NODE_DEBUG_OPTION% ./node_modules/ts-node/dist/bin.js index.ts",
+    "update": "node ./node_modules/ts-node/dist/bin.js index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
